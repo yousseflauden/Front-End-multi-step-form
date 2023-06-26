@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+
+  
+  <body>
+    <div class="container">
+      <div class="side-container">
+        <div class="step">
+          <span id="stepnum1" class="step-num active-step">1</span>
+          <div class="step-texts">
+            <span>Step 1</span>
+            <p>Your Info</p>
+          </div>
+        </div>
+        <div class="step">
+          <span id="stepnum2" class="step-num ">2</span>
+          <div class="step-texts">
+            <span>Step 2</span>
+            <p>Select Plan</p>
+          </div>
+        </div>
+        <div class="step">
+          <span id="stepnum3" class="step-num">3</span>
+          <div class="step-texts">
+            <span>Step 3</span>
+            <p>add-ons</p>
+          </div>
+        </div>
+        <div  class="step">
+          <span id="stepnum4" class="step-num">4</span>
+          <div class="step-texts">
+            <span>Step 4</span>
+            <p>summary</p>
+          </div>
+        </div>
+        <div id="stepnum5" class="step helper-step">
+          <span class="step-num">4</span>
+          <div class="step-texts">
+            <span>Step 4</span>
+            <p>summary</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="center-container">
+        <section id="section1" class="personal-info section active-section ">
+          <div class="section-container">
+            <h1 class="heading">Personal info</h1>
+            <p class="details">
+              Please provide your name, email address, and phone number
+            </p>
+            <div class="label-container">
+              <label class="label" for="name-input">Name</label>
+              <span id="namevalidation" class="required required__name hide validationforms">
+                </span>
+            </div>
+            <div class="all-inputs">
+              <input
+                type="text"
+                class="input name-input"
+                id="nameinput"
+                spellcheck="false"
+                placeholder="e.g. Stephen King"/>
+              <div class="label-container">
+                <label class="label" for="email-input">Email Address</label>
+                <span  id="mailvalidation" class="required required__mail hide validationforms">
+                </span>
+              </div>
+              <input
+                class="input mail-input"
+                type="email"
+                id="mailinput"
+                spellcheck="false"
+                placeholder="e.g. stephenking@lorem.com"/>
+              <div class="label-container">
+                <label class="label" for="tel-input">Phone Number </label>
+                <span id="telvalidation" class="required required__phone hide validationforms">
+                  </span>
+              </div>
+              <input
+                class="input phone-input"
+                type="tel"
+                id="telinput"
+                spellcheck="false"
+                placeholder="e.g. +1 234 567 890"
+              />
+            </div>
+            <button id="btnnextsteptwo" class="next  go-next-btn" onclick="gosteptwo()">Next Step</button>
+          </div>
+        </section>
+
+
+
+
+        <section id="section2" class="select-plan section ">
+          <div class="section-container">
+            <h1 class="heading">Select Your plan</h1>
+            <p class="details">
+              You have the option of monthly or yearly billing
+            </p>
+            <div class="all-plans-container">
+              <div class="all-plans">
+                <div class="plan-container" onclick="selectoffer1()">
+                  <img
+                    class="plan-img"
+                    src="./image/icon-arcade.svg"
+                    alt=""
+                  />
+                  <div class="plan-container-flex">
+                    <span class="plan-name">Arcade</span>
+                    <span id="price-month1" class="price-description price-description__arcade margin--top">$9/mo</span>
+                    <span id="price-year1" class="price-description price-description__arcade margin--top hide"> $90/year</span>
+                  </div>
+                  <br>
+                  <div id="offer-year" class="hidden">2 monthes free</div>
+                </div>
+                <div class="plan-container" onclick="selectoffer2()">
+                  <img
+                    class="plan-img"
+                    src="./image/icon-advanced.svg"
+                    alt=""/>
+                  <div class="plan-container-flex">
+                    <span class="plan-name">Advanced</span>
+                    <span id="price-month2"  class="price-description price-description__advanced margin--top">$12/mo</span>
+                    <span id="price-year2" class="price-description price-description__advanced margin--top hide">$120/year</span>
+                  </div>
+                  <br>
+                  <div id="offer-year" class="hidden">2 monthes free</div>
+                </div>
+                <div class="plan-container" onclick="selectoffer3()">
+                  <img
+                    class="plan-img"
+                    src="./image/icon-pro.svg"
+                    alt=""/>
+                  <div class="plan-container-flex">
+                    <span class="plan-name">Pro</span>
+                    <span id="price-month3"
+                      class="price-description price-description__pro margin--top">$15/mo</span>
+                    <span id="price-year3"
+                      class="price-description price-description__pro margin--top hide">$150/year</span>
+                  </div>
+                  <br>
+                  <div id="offer-year" class="hidden">2 monthes free</div>
+                </div>
+              </div>
+              <span id="offer-error" class="no-plan-error hide"
+                >Please choose a plan from above</span
+              >
+            </div>
+            <div class="toggle-container">
+              <span id="monthly-price" class="month-or-year monthly-price active-price">
+                Monthly
+                </span
+              >
+              <!-- <input class="toggle-button" type="checkbox" id="switch" />
+              <label class="toggle-label toggle-js" id="toggle-labal" for="switch"></label>-->
+              <label class="switch">
+                <input type="checkbox" id="btntoggle" class="hide" onclick="toggle()">
+                <span class="slider round"></span>
+              </label>
+              <span id="yearly-price" class="month-or-year yearly-price">
+                Yearly
+              </span> 
+            </div>
+            <button id="btngobackone" class="next  go-back-btn hide" onclick="backstepone()">Go Back</button>
+            <button id="btnnextstepthree" class="next  go-next-btn hide" onclick="gotostepthree()">Next Step</button>
+          </div>
+        </section>
+
+
+
+
+
+        <section id="section3" class="addons section">
+          <div class="section-container">
+            <h1 class="heading">Pick add-ons</h1>
+            <p class="details">Add-ons help enhance your gaming experience</p>
+            <label for="addons-checkbox">
+              <div class="addon-container container-flex">
+                <input
+                  type="checkbox"
+                  id="addons-checkbox"
+                  class="addons-checkbox online-service__checkbox"
+                  data-name="Online Service"
+                  onclick="get1()"
+                  />
+                <div class="addons-text">
+                  <span class="plan-name plan-name__addons cursor-pointer"
+                    >Online service</span>
+                  <span class="price-description cursor-pointer">
+                    Access to multiplayer games
+                  </span>
+                </div>
+                <span id="ponlineser" class="price addon-price addon-price__online">
+                </span>
+              </div>
+            </label>
+            <label for="addons-checkbox1">
+              <div class="addon-container container-flex">
+                <input
+                  type="checkbox"
+                  id="addons-checkbox1"
+                  class="addons-checkbox larger-storage__checkbox"
+                  data-name="Larger Storage"
+                  onclick="get2()"
+                  />
+                <div class="addons-text">
+                  <span class="plan-name plan-name__addons cursor-pointer">
+                    Larger Storage</span>
+                  <span class="price-description cursor-pointer">
+                    Extra 1TB of could save
+                  </span>
+                </div>
+                <span
+                  isityear="false"
+                  id="plargestor"
+                  class="price addon-price addon-price__larger">
+                </span>
+              </div>
+            </label>
+            <label for="addons-checkbox2">
+              <div class="addon-container container-flex">
+                <input
+                  type="checkbox"
+                  id="addons-checkbox2"
+                  class="addons-checkbox costumizable-profile__checkbox"
+                  data-name="Costumizable Profile"
+                  onclick="get3()"
+                  />
+                <div class="addons-text">
+                  <span class="plan-name plan-name__addons cursor-pointer"
+                    >Costumizable Profile</span>
+                  <span class="price-description cursor-pointer">
+                    Costume theme on your profile
+                  </span>
+                </div>
+                <span
+                  isityear="false"
+                  id="pprofile"
+                  class="price addon-price addon-price__costume">
+                </span>
+              </div>
+            </label>
+            <button id="btngobacktwo" class="next btns  go-back-btn hide" onclick="backsteptwo()">Go Back</button>
+            <button id="btnnextstepfour" class="next btns go-next-btn hide" onclick="gotostepfour()">Next Step</button>
+          </div>
+        </section>
+
+
+
+
+
+        <section  id="section4"class="finish-section section">
+          <div class="section-container">
+            <h1 class="heading">Finishing Up</h1>
+            <p class="details">
+              Double-check everything looks OK before confirming
+            </p>
+            <div class="finishing-container">
+              <div class="change-container">
+                <div class="change-text">
+                  <span id="plane-name" class="plan-name plan-name__addons finishing-plan-name">
+                  </span>
+                  <span class="finishing-plan-mo-yr"></span>
+                  <button class="change-btn" onclick="change()" >Change</button>
+                </div>
+                <div class="change-price">
+                  <span id="plane-price" class="price finishing-price-plan"></span>
+                </div>
+              </div>
+              <br>
+              <div class="extra-addons-container">
+                <div class="flexResume">
+                  <p>Online service</p>
+                  <label for="" id="onlinePrice"></label>
+                </div>
+                <div class="flexResume">
+                  <p>Larger storage</p>
+                  <label for="" id="storagePrice"></label>
+                </div>
+                <div class="flexResume">
+                  <p>Customizable profile</p>
+                  <label for="" id="customizablePrice"></label>
+                </div>
+              </div>
+            </div>
+            <div class="total-container change-container">
+              <span class="price-description"
+                >Total (per<span class="per-time" id="per-time"></span>)</span
+              >
+              <span class="total-price">
+                $<span class="finishing-total-price" id="finishing-total-price"></span>/<span
+                  class="finishint-total-date"
+                  id="finishint-total-date"
+                ></span>
+              </span>
+            </div>
+            <button id="btnfinish" class="next btns go-next-btn hide" onclick="confirm()">Confirm</button>
+          </div>
+        </section>
+
+
+        <section id="section5" class="section thank-section">
+          <div class="section-container thanks-container">
+            <img
+              class="thank-img"
+              src="./image/icon-thank-you.svg"
+              alt="tick image"
+            />
+            <h1 class="heading">Thank you!</h1>
+            <p class="thanks-text">
+              Thanks for comfirming your subscription! We hope you have fun
+              using our platform. if you ever need support, please feel free to
+              email us at support@loremgaming.com
+            </p>
+          </div>
+        </section>
+
+
+
+
+        <div class="btns">
+
+        </div>
+      </div>
+    </div>
+    <!-- 
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mento</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="main.js"></script>
+    <script src="code.jquery.com_jquery-3.7.0/code.jquery.com_jquery-3.7.0.js"></script>
+  </body>
+</html>
