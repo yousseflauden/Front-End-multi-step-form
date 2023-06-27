@@ -104,7 +104,9 @@
                 placeholder="e.g. +1 234 567 890"
               />
             </div>
-            <button id="btnnextsteptwo" class="next  go-next-btn" onclick="gosteptwo()">Next Step</button>
+            <div class="btncontainerstep1">
+              <button id="btnnextsteptwo" class="next  go-next-btn" onclick="gosteptwo()">Next Step</button>
+            </div>
           </div>
         </section>
 
@@ -162,7 +164,7 @@
                   <div id="offer-year" class="hidden">2 monthes free</div>
                 </div>
               </div>
-              <span id="offer-error" class="no-plan-error hide"
+              <span id="offer-error" class="no-plan-error hidden"
                 >Please choose a plan from above</span
               >
             </div>
@@ -181,8 +183,10 @@
                 Yearly
               </span> 
             </div>
-            <button id="btngobackone" class="next  go-back-btn hide" onclick="backstepone()">Go Back</button>
-            <button id="btnnextstepthree" class="next  go-next-btn hide" onclick="gotostepthree()">Next Step</button>
+            <div class="btncontainerstep2">
+              <button id="btngobackone" class="next  go-back-btn hide" onclick="backstepone()">Go Back</button>
+              <button id="btnnextstepthree" class="next  go-next-btn hide" onclick="gotostepthree()">Next Step</button>
+            </div>
           </div>
         </section>
 
@@ -260,8 +264,10 @@
                 </span>
               </div>
             </label>
-            <button id="btngobacktwo" class="next btns  go-back-btn hide" onclick="backsteptwo()">Go Back</button>
-            <button id="btnnextstepfour" class="next btns go-next-btn hide" onclick="gotostepfour()">Next Step</button>
+            <div class="btncontainerstep3">
+              <button id="btngobacktwo" class="next btns  go-back-btn hide" onclick="backsteptwo()">Go Back</button>
+              <button id="btnnextstepfour" class="next btns go-next-btn hide" onclick="gotostepfour()">Next Step</button>
+            </div>
           </div>
         </section>
 
@@ -314,7 +320,9 @@
                 ></span>
               </span>
             </div>
-            <button id="btnfinish" class="next btns go-next-btn hide" onclick="confirm()">Confirm</button>
+            <div class="btncontainerstep4">
+              <button id="btnfinish" class="next btns go-next-btn hide" onclick="confirm()">Confirm</button>
+            </div>
           </div>
         </section>
 
