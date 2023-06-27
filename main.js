@@ -216,9 +216,9 @@ function selectoffer3(){
 function gotostepthree(){
 
     if(planename === undefined && planeprice === undefined){
-        offererror.classList.remove('hide');
+        offererror.classList.remove('hidden');
     }else{
-        offererror.classList.add('hide');
+        offererror.classList.add('hidden');
         wplanename.innerHTML = planename;
         wplaneprice.innerHTML = "+"+planeprice + "$";
         section3.style.display = 'block';
