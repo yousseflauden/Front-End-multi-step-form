@@ -73,9 +73,9 @@ let mprice1 = document.getElementById('price-month1');
             planecont[1].classList.remove('plan-container-active');
             planecont[2].classList.remove('plan-container-active');
             planecont[0].classList.remove('plan-container-active');
-            fprice = 0;
-            sprice = 0;
-            thprice = 0;
+            fprice = 10;
+            sprice = 20;
+            thprice = 20;
             pertime = "year";
             fpriceout.innerHTML = "+0$";
             spriceout.innerHTML = "+0$";
@@ -103,9 +103,9 @@ let mprice1 = document.getElementById('price-month1');
             planecont[1].classList.remove('plan-container-active');
             planecont[2].classList.remove('plan-container-active');
             planecont[0].classList.remove('plan-container-active');
-            fprice = 0;
-            sprice = 0;
-            thprice = 0;
+            fprice = 1;
+            sprice = 2;
+            thprice = 2;
             pertime = "month";
             fpriceout.innerHTML = "+0$";
             spriceout.innerHTML = "+0$";
@@ -128,9 +128,6 @@ function selectoffer2(){
         planecont[1].classList.add('plan-container-active');
         planecont[2].classList.remove('plan-container-active');
         planecont[0].classList.remove('plan-container-active');
-        addonas1.checked = false;
-        addonas2.checked = false;
-        addonas3.checked = false;
         fprice = 1;
         sprice = 2;
         thprice = 2;
@@ -141,9 +138,6 @@ function selectoffer2(){
         planecont[1].classList.add('plan-container-active');
         planecont[2].classList.remove('plan-container-active');
         planecont[0].classList.remove('plan-container-active');
-        addonas1.checked = false;
-        addonas2.checked = false;
-        addonas3.checked = false;
         fprice = 10;
         sprice = 20;
         thprice = 20;
@@ -159,13 +153,9 @@ function selectoffer1(){
         planecont[0].classList.add('plan-container-active');
         planecont[2].classList.remove('plan-container-active');
         planecont[1].classList.remove('plan-container-active');
-        addonas1.checked = false;
-        addonas2.checked = false;
-        addonas3.checked = false;
         fprice = 1;
         sprice = 2;
         thprice = 2;
-
     } else if(activeprice[1].classList.contains('active-price')){
         Acradeprice = 90;
         planename = "Acrade";
@@ -173,9 +163,6 @@ function selectoffer1(){
         planecont[0].classList.add('plan-container-active');
         planecont[2].classList.remove('plan-container-active');
         planecont[1].classList.remove('plan-container-active');
-        addonas1.checked = false;
-        addonas2.checked = false;
-        addonas3.checked = false;
         fprice = 10;
         sprice = 20;
         thprice = 20;
@@ -190,9 +177,6 @@ function selectoffer3(){
         planecont[2].classList.add('plan-container-active');
         planecont[1].classList.remove('plan-container-active');
         planecont[0].classList.remove('plan-container-active');
-        addonas1.checked = false;
-        addonas2.checked = false;
-        addonas3.checked = false;
         fprice = 1;
         sprice = 2;
         thprice = 2;
@@ -203,9 +187,6 @@ function selectoffer3(){
         planecont[2].classList.add('plan-container-active');
         planecont[1].classList.remove('plan-container-active');
         planecont[0].classList.remove('plan-container-active');
-        addonas1.checked = false;
-        addonas2.checked = false;
-        addonas3.checked = false;
         fprice = 10;
         sprice = 20;
         thprice = 20;
@@ -274,48 +255,80 @@ function backsteptwo(){
     let btnfinish = document.getElementById('btnfinish');
 
 
-    if(addonas1.checked == false){
-        fpriceout.innerHTML = "+0$"
-    } 
 
-    if(addonas2.checked == false){
-        spriceout.innerHTML = "+0$"
-    } 
-
-    if(addonas3.checked == false){
-        thpriceout.innerHTML = "+0$"
-    } 
-
-    function get1(){
+function get1 ()
+{
+    if ( btntoggle.checked === true ) {
+        fprice = 10;
         if(addonas1.checked == true){
             fpriceout.innerHTML = "+"+ fprice + "$"
         }else if(addonas1.checked == false){
-            fpriceout.innerHTML = "+0$"
+            fpriceout.innerHTML = "+0$";
+            fprice = 0;
+        }
+        }
+    if ( btntoggle.checked === false ) {
+        fprice = 1;
+        if(addonas1.checked == true){
+            fpriceout.innerHTML = "+"+ fprice + "$"
+        }else if(addonas1.checked == false){
+            fpriceout.innerHTML = "+0$";
+            fprice = 0;
+        }
         }
     }
 
-    function get2(){
-        if(addonas2.checked == true){
+function get2 ()
+{
+    if ( btntoggle.checked === true ) {
+        sprice = 20;
+            if(addonas2.checked == true){
             spriceout.innerHTML = "+"+ sprice + "$"
         }else if(addonas2.checked == false){
-            spriceout.innerHTML = "+0$"
-        }
+            spriceout.innerHTML = "+0$";
+            sprice = 0;
+        }}
+    if ( btntoggle.checked === false ) {
+        sprice = 2;
+            if(addonas2.checked == true){
+            spriceout.innerHTML = "+"+ sprice + "$"
+        }else if(addonas2.checked == false){
+            spriceout.innerHTML = "+0$";
+                sprice = 0;
+        }}
+        
     }
 
-    function get3(){
-        if(addonas3.checked == true){
-            thpriceout.innerHTML ="+"+ thprice + "$"
-        }else if(addonas3.checked == false){
-            thpriceout.innerHTML = "+0$"
-        } 
+function get3 ()
+{
+    if ( btntoggle.checked === true ) {
+        thprice = 20;
+        if ( addonas3.checked == true ) {
+            thpriceout.innerHTML = "+" + thprice + "$";
+        } else if ( addonas3.checked == false ) {
+            thpriceout.innerHTML = "+0$";
+            thprice = 0;
+        }}
+    if ( btntoggle.checked === false ) {
+        thprice = 2;
+        if ( addonas3.checked == true ) {
+            thpriceout.innerHTML = "+" + thprice + "$";
+        } else if ( addonas3.checked == false ) {
+            thpriceout.innerHTML = "+0$";
+            thprice = 0;
+        }}
     }
 
-    function gotostepfour(){
+function gotostepfour ()
+{
+        get1();
+        get2();
+        get3();
         section4.style.display = 'block';
         section3.style.display = 'none';
         stepnum4.classList.add('active-step');
-        stepnum3.classList.remove('active-step');
-        total = planeprice + fprice + sprice + thprice;
+        stepnum3.classList.remove( 'active-step' );
+        total = fprice + sprice + thprice + planeprice;
         finishingprice.innerHTML = total;
         pertimeout.innerHTML = " " + pertime;
         btnfinish.classList.remove('hide');
